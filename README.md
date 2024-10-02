@@ -1,8 +1,12 @@
 # Bike Sharing Data Analysis Project
 
 **Author**: Verry Kurniawan
-**Email**: vexykrwn@gmail.com  
+**Email**: m200b4ky4409@bangkit.academy
 **ID Dicoding**: verryk26
+
+## Streamlit
+
+https://verry-dicodingzzzz.streamlit.app/
 
 ## Questions to be Answered
 
