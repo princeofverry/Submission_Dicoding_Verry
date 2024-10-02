@@ -284,8 +284,8 @@ st.pyplot(fig)
 st.subheader("Jumlah Penyewaan Sepeda Tiap Bulan")
 # Membuat figure dan axes untuk plot
 fig, ax = plt.subplots(figsize=(10, 6))
-# Membuat barplot
-sns.barplot(x='month', y='count_total', data=monthly_loan, palette='viridis', ax=ax)
+# Membuat barplot dengan warna solid
+sns.barplot(x='month', y='count_total', data=monthly_loan, color='skyblue', ax=ax)
 # Menambahkan judul dan label sumbu
 ax.set_title('Jumlah Penyewaan Sepeda Tiap Bulan', fontsize=16)
 ax.set_xlabel('Bulan', fontsize=12)
@@ -294,6 +294,7 @@ ax.set_ylabel('Jumlah Penyewaan', fontsize=12)
 ax.set_xticklabels(ax.get_xticks(), rotation=45)
 # Menampilkan plot menggunakan Streamlit
 st.pyplot(fig)
+
 
 st.subheader("Jumlah Pelanggan per Bulan pada Tahun 2012")
 # Membuat figure dan axes untuk plot dengan ukuran (24, 5)
