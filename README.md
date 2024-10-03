@@ -85,7 +85,7 @@ Both `hour.csv` and `day.csv` have the following fields (except for the `hr` col
 6. **Run the Streamlit app**:
    ```bash
    cd dashboard
-   streamlit run app.py
+   streamlit run dashboard.py
    ```
 
 ## Data Cleaning Process

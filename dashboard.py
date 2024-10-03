@@ -329,6 +329,58 @@ ax.set_ylabel('Total Penyewaan', fontsize=12)
 # Menampilkan plot menggunakan Streamlit
 st.pyplot(fig)
 
+# Hasil Clustering
+# Fungsi untuk mengategorikan durasi perjalanan
+def categorize_duration(duration):
+    if duration <= 10:
+        return 'Perjalanan Singkat'
+    elif 10 < duration <= 30:
+        return 'Perjalanan Menengah'
+    else:
+        return 'Perjalanan Panjang'
+
+# Simulasi data, ganti dengan data sebenarnya
+
+# Hitung durasi dari count_total
+hour_df['duration'] = hour_df['count_total'] / 60  # Asumsi 1 count = 1 menit
+hour_df['duration_category'] = hour_df['duration'].apply(categorize_duration)
+
+# Analisis hasil clustering
+cluster_stats = hour_df.groupby('duration_category').agg({
+    'count_total': 'count',
+    'duration': ['mean', 'median'],
+    'temperature': 'mean'
+})
+
+cluster_stats.columns = ['count', 'duration_mean', 'duration_median', 'temperature_mean']
+cluster_stats = cluster_stats.reset_index()
+
+# Tampilkan data dan hasil analisis di Streamlit
+st.title("Clustering Analysis - Durasi Perjalanan")
+
+# Tampilkan tabel cluster stats
+st.write("Statistik Cluster Durasi Perjalanan:")
+st.dataframe(cluster_stats)
+
+# Visualisasi hasil clustering
+st.write("Distribusi Kategori Durasi Perjalanan:")
+plt.figure(figsize=(12, 6))
+sns.barplot(x='duration_category', y='count', data=cluster_stats)
+plt.title("Distribusi Kategori Durasi Perjalanan")
+plt.xlabel("Kategori Durasi")
+plt.ylabel("Jumlah Perjalanan")
+
+# Tampilkan plot di Streamlit
+st.pyplot(plt)
+
+st.write("Hasil clustering")
+st.markdown("""
+- Kategori perjalanan yang paling umum adalah Perjalanan Singkat.
+- Rata-rata durasi perjalanan terpanjang terjadi pada kategori Perjalanan Menengah.
+- Kategori Perjalanan Menengah memiliki rata-rata suhu tertinggi.
+""")
+
+
 st.markdown("""
 ### Conclusion
 
