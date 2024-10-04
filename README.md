@@ -99,16 +99,6 @@ The following steps were taken to clean and preprocess the data:
 - Modify the data types of specific columns to match the type of information they contain.
 - Convert other data as needed to ensure consistency and readiness for further analysis.""")
 
-## Visualizations
-
-Several visualizations were created using Seaborn and Matplotlib, including:
-
-- **Bar plots** to visualize total rentals by day and season.
-- **Line plots** to show bike rental trends by hour.
-- **Bar plots** to compare rentals by weather condition.
-- **Bar plots** to compare rentals between casual and registered users.
-- **Bar plots** to show the distribution of trip duration categories.
-
 ## Deployment
 
 This app is deployed on Streamlit Cloud. You can view the live version [here](verry-dicoding.streamlit.app).
