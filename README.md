@@ -1,7 +1,9 @@
 # Bike Sharing Data Analysis Project
 
 **Author**: Verry Kurniawan
+
 **Email**: m200b4ky4409@bangkit.academy
+
 **ID Dicoding**: verryk26
 
 ## Streamlit
@@ -84,7 +86,6 @@ Both `hour.csv` and `day.csv` have the following fields (except for the `hr` col
 
 6. **Run the Streamlit app**:
    ```bash
-   cd dashboard
    streamlit run dashboard.py
    ```
 
